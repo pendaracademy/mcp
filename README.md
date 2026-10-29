@@ -9,23 +9,27 @@ builder tab  <--ws://127.0.0.1:7420/bridge--      @pendar/mcp
 
 ## Run
 
+From this repo:
+
 ```sh
-npx @pendar/mcp
+npx -y github:pendaracademy/mcp
 ```
 
-It binds `127.0.0.1:7420` and prints a pairing token on stderr. Paste that token in the builder (saved as `pendar.mcpToken`).
+Or clone and `node src/cli.js`. It binds `127.0.0.1:7420` and prints a pairing token on stderr. Paste that token in the Pendar course builder (saved as `pendar.mcpToken`).
 
 ```
 PENDAR_MCP_PORT=7420
 PENDAR_MCP_TOKEN=optional-fixed-token
 ```
 
+`npx @pendar/mcp` works after the package is published to npm.
+
 ## Grok
 
 ```toml
 [mcp_servers.pendar]
 command = "npx"
-args = ["-y", "@pendar/mcp"]
+args = ["-y", "github:pendaracademy/mcp"]
 ```
 
 Claude Desktop and Cursor use the same command. HTTP MCP is `http://127.0.0.1:7420/mcp` while the process is running.
